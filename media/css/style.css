@@ -1,0 +1,73 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.header {
+	height:200px;
+	background: url(../img/fon.jpg);
+}
+.logotext{
+	color: white;
+	text-shadow: 1px 1px 1px gold;
+	float: right;
+	padding: 10px;
+	margin: center-right;
+}
+.logo{
+	width:200px;
+	float: left;
+	margin-left: 30px;
+	margin-top: 5px;	
+}
+.menu{
+	display: flex;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	flex-direction: row;
+
+}
+.menu a{
+flex: 1;
+font-size: 14px;
+text-align: center;
+padding: 10px;
+color: white;
+background: olive;
+text-decoration: none;
+border-right:1px solid white;
+}
+.menu a:hover{
+background: gold;
+color: black;
+
+}
+#footer {
+	position: fixed; 
+    left: 0; bottom: 0; 
+    padding: 10px; 
+    background: #39b54a;
+    color: #fff;
+    width: 100%;
+}
+p {
+	text-align: justify;
+}
+.col-md-2{
+	margin-top: 5px;
+}
+
+@media screen and (max-width:600px){
+	.menu{
+		flex-direction: column;
+	}
+	.menu a{
+		border-bottom: solid 1px white;
+	}
+	.logo{
+		display: none;
+	}
+	.header{
+		height: 100px;
+	}
+}
