@@ -1,5 +1,18 @@
-<?php
+<?php session_start();
 	require_once('config/config.php');
+	?>
+<?php
+	if(isset($_SESSION['user_id'])){
+	?>
+	<a href="home.php">Home</a>
+	<a href="logout.php">Logout</a>
+	<?php
+	}else{
+	?>
+		login
+		registr
+	<?php
+	}
 	?>
 <!Doctype html>
 <html>
