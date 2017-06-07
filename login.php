@@ -10,16 +10,17 @@
 			}
 			if(mysqli_num_rows($adr)>0){
 				$user=mysqli_fetch_array($adr);
-				echo "<pre>";
-				print_r($user);
-				echo "</pre>";
+				$_SESSION['user_id']=$user['id'];
+		?>
+		<script>
+			document.location.hreg='index.php'
+		</script>
+		<?php
 				}else{
 				echo 'ошибка входа';
 				}
-				$_SESSION['user_id']=$user['id'];
-				}else{
-				echo'1';
-				}
+				
+				} 
 ?>
 <form method='POST' action='login.php'>
 	<div class="form-group">

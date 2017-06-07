@@ -1,19 +1,7 @@
 <?php session_start();
 	require_once('config/config.php');
 	?>
-<?php
-	if(isset($_SESSION['user_id'])){
-	?>
-	<a href="home.php">Home</a>
-	<a href="logout.php">Logout</a>
-	<?php
-	}else{
-	?>
-		login
-		registr
-	<?php
-	}
-	?>
+
 <!Doctype html>
 <html>
 	<head>
@@ -55,5 +43,19 @@
 				<a href="#" class="btn btn-success btn-block">Фотографии</a>
 				<a href="#" class="btn btn-success btn-block">Видиоприколы с котами</a>
 				<a href="#" class="btn btn-success btn-block">Доска объявлений</a>
+				<?php
+	if(isset($_SESSION['user_id'])){
+	?>
+	<a href="home.php" class="btn btn-success btn-block">Home</a>
+	<a href="logout.php" class="btn btn-success btn-block">Logout</a>
+	<?php
+	}else{
+	?>
+	<a href="register.php" class="btn btn-success btn-block">Register</a>
+	<a href="login.php" class="btn btn-success btn-block">Login</a>
+	<?php
+	}
+	?>
 			</div>
 			<div class="col-md-8">
+			
