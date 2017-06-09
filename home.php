@@ -5,7 +5,7 @@
 $name = $_POST['name'];
 $about = $_POST['about'];
 	if($_FILES){
-		$filename='/uplads/'.$_FILES['picture']['name'];
+		$filename='/uplouds/'.$_FILES['picture']['name'];
 		$move=move_uploaded_file( $_FILES['picture']['tmp_name'],$_SERVER['DOCUMENT_ROOT'].$filename);
 		if(!$move) 
 			exit('error pick uplode');
@@ -15,6 +15,9 @@ $about = $_POST['about'];
 	}
 	$query="INSERT INTO aboutusers VALUES(NULL,'$name','$about','$filename')";
 	$in=mysqli_query($db_con,$query);
+	if(!$adr){
+		exit('ошибка');
+	}
 	?>
 	<script>
 	 document.location.href="home.php"
@@ -37,7 +40,20 @@ $about = $_POST['about'];
         <input type="file" name="picture" />
     </div>
   <button type="registr" class="btn btn-default">Добавить</button>
+  <tr>
+	<td>
+	<?php
+		$zx="";
+		if($result['picture']){
+			$zx=$result['picture']
+		}else{
+			$zx='/media/img/notimg.jpg'
+		}
+	?>	
+	</td>
+  </tr>
   </form>
+  
 <?php	}else{
  echo "ОШИБКА ВХОДА";
 }
