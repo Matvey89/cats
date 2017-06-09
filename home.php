@@ -1,11 +1,26 @@
 <?php require_once('templates/top.php');
 	if(isset($_SESSION['user_id'])){
 	if($_POST){
-	echo "<pre>";
-		print_r($_POST);
-		print_r($_FILES);
-	echo "</pre>";	
+ 
+$name = $_POST['name'];
+$about = $_POST['about'];
+	if($_FILES){
+		$filename='/uplads/'.$_FILES['picture']['name'];
+		$move=move_uploaded_file( $_FILES['picture']['tmp_name'],$_SERVER['DOCUMENT_ROOT'].$filename);
+		if(!$move) 
+			exit('error pick uplode');
+
+	} else {
+		$filename="";
 	}
+	$query="INSERT INTO aboutusers VALUES(NULL,'$name','$about','$filename')";
+	$in=mysqli_query($db_con,$query);
+	?>
+	<script>
+	 document.location.href="home.php"
+	</script>
+	<?php
+}
 	?>
 	<form enctype="multipart/form-data" method="post">
 	
