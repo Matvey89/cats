@@ -13,7 +13,7 @@
 				$_SESSION['user_id']=$user['id'];
 		?>
 		<script>
-			document.location.hreg='index.php'
+			document.location.href='home.php'
 		</script>
 		<?php
 				}else{
