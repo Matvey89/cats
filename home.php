@@ -4,8 +4,8 @@
  
 $name = $_POST['name'];
 $about = $_POST['about'];
-	if($_FILES){
-		$filename='/uplouds/'.$_FILES['picture']['name'];
+	if($_FILES['picture']['size']>0){
+		$filename='/media/uplouds/'.$_FILES['picture']['name'];
 		$move=move_uploaded_file( $_FILES['picture']['tmp_name'],$_SERVER['DOCUMENT_ROOT'].$filename);
 		if(!$move) 
 			exit('error pick uplode');
@@ -14,7 +14,7 @@ $about = $_POST['about'];
 		$filename="";
 	}
 	$query="INSERT INTO aboutusers VALUES(NULL,'$name','$about','$filename')";
-	$in=mysqli_query($db_con,$query);
+	$adr=mysqli_query($db_con,$query);
 	if(!$adr){
 		exit('ошибка');
 	}
@@ -33,26 +33,55 @@ $about = $_POST['about'];
     </div>
 	<div class="form-group">
     <label for="exampleInputAbout">Описание</label>
-    <textarea class="form-control" name="about"  id="exampleInputPassword"  placeholder="Описание"></textarea>
+    <textarea class="ckeditor textarea" name="about"  id="exampleInputPassword"  placeholder="Описание"></textarea>
   </div>
   <div class="form-group">
         <label for="exampleInputImg">Изображение</label>
         <input type="file" name="picture" />
     </div>
   <button type="registr" class="btn btn-default">Добавить</button>
-  <tr>
-	<td>
-	<?php
-		$zx="";
-		if($result['picture']){
-			$zx=$result['picture']
-		}else{
-			$zx='/media/img/notimg.jpg'
-		}
-	?>	
-	</td>
-  </tr>
   </form>
+  <table class="table">
+	<tr>
+		<th width="200px">Изображение</th>
+		<th>название</th>
+		<th>Действие</th>
+	</tr>
+	<?php
+			$query="SELECT * FROM aboutusers ORDER BY id DESC";
+			$adr=mysqli_query($db_con,$query);
+			if (!$adr){
+                exit('error query');
+            }
+            while($result=mysqli_fetch_array($adr)){
+				?>
+	  <tr>
+		<td>
+			<?php             
+			if($result['image']==''){
+				?>
+				 <img width='200px' src='/media/uplouds/no_photo.jpg'/>;
+				 <?php
+			}else{
+			?>
+			<img width='200px' src='<?=$result['image']?>'/>;
+			<?php
+			}
+			?>
+			
+		</td>
+		<td><?=$result['name']?></td>
+        <td>
+			<a href="edit.php?id=<?=$result['id']?>">Редактирование</a>
+			<a href="#" onclick="delete_position('del.php?id=<?=$result['id']?>', 'Вы действительно хотите удалить?')">Удалить</a>
+		</td>
+	  </tr>
+	  <?php
+			}
+		?>
+	
+	  </table>
+  
   
 <?php	}else{
  echo "ОШИБКА ВХОДА";

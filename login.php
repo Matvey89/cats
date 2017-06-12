@@ -22,7 +22,7 @@
 				
 				} 
 ?>
-<form method='POST' action='login.php'>
+		<form method='POST' action='login.php'>
 	<div class="form-group">
         <label for="exampleInputEmail1">Login</label>
         <input type="name"   class="form-control" name="login" id="exampleInputName"  placeholder="Name">

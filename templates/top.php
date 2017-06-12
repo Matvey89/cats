@@ -19,13 +19,21 @@
 		<meta name="keywords" content="<?=(isset($keywords))?$keywords:"Нужна ли кошка в квартире?";?>">
 		<link type="text/css" rel="stylesheet" href="media/bootstrap/css/bootstrap.min.css"/>
 		<link type="text/css" rel="stylesheet" href="media/css/style.css"/>
-	
+		<?php
+			if($_SESSION['user_id']){
+			?>
+		<script src="/media/js/home.js"</script>
+			<?php
+			}
+		?>
+		<script src="/media/ckeditor/ckeditor.js"></script>
 	</head>
 	
-	<body>
+	<body >
 		<div class="header">
 			<h1 class="logotext">Маленькие кошачьи радости</h1>
 			<img src="media/img/logoo.gif" class="logo"/>
+	
 		</div>
 		<br style="clear:both" />
 		<nav class="menu">
@@ -34,6 +42,20 @@
 			<a href="index.php?url=about">описание</a>
 			<a href="#">форум</a>
 			<a href="index.php?url=contacts">контакты</a>
+	<?php		
+    if(isset($_SESSION['user_id'])){
+	?>
+	<a href="home.php" >Моя страница</a>
+	<a href="logout.php" >Выход</a>
+	<?php
+	}else{
+	?>
+	<a href="register.php" >Регистрация</a>
+	<a href="login.php" >Вход</a>
+	<?php
+	}
+	?>
+
 		</nav>
 		<div class="boot">
 			<div class="col-md-2">
@@ -43,19 +65,8 @@
 				<a href="#" class="btn btn-success btn-block">Фотографии</a>
 				<a href="#" class="btn btn-success btn-block">Видиоприколы с котами</a>
 				<a href="#" class="btn btn-success btn-block">Доска объявлений</a>
-				<?php
-	if(isset($_SESSION['user_id'])){
-	?>
-	<a href="home.php" class="btn btn-success btn-block">Home</a>
-	<a href="logout.php" class="btn btn-success btn-block">Logout</a>
-	<?php
-	}else{
-	?>
-	<a href="register.php" class="btn btn-success btn-block">Register</a>
-	<a href="login.php" class="btn btn-success btn-block">Login</a>
-	<?php
-	}
-	?>
+				
+	
 			</div>
 			<div class="col-md-8">
 			

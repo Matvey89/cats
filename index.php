@@ -21,8 +21,10 @@ $keywords="Нужна ли кошка в квартире?";
   echo"</pre>";*/
   ?>
 				<h2><?=$result['name'];?></h2>
+				<article>
 				<div>
 				<?=$result['body'];?>
 				</div>
+				</article>
 			
 <?php require_once('templates/bottom.php');?>
