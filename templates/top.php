@@ -20,6 +20,7 @@
 		<link type="text/css" rel="stylesheet" href="media/bootstrap/css/bootstrap.min.css"/>
 		<link type="text/css" rel="stylesheet" href="media/css/style.css"/>
 		<script src="/media/js/jquery-3.2.1.min.js"></script>
+		<script src="/media/js/main.js"></script>
 		<?php
 			if($_SESSION['user_id']){
 			?>
@@ -39,11 +40,11 @@
 		</div>
 		<br style="clear:both" />
 		<nav class="menu">
-			<a href="/">главная</a>
-			<a href="#">новости</a>
-			<a href="index.php?url=about">описание</a>
-			<a href="#">форум</a>
-			<a href="index.php?url=contacts">контакты</a>
+			<a href="/" data-title="Главная">главная</a>
+			<a href="#" data-title="Новости">новости</a>
+			<a href="index.php?url=about" data-title="Описание">описание</a>
+			<a href="#" data-title="Форум">форум</a>
+			<a href="index.php?url=contacts" class="contacts" data-title="Контакты">контакты</a>
 	<?php		
     if(isset($_SESSION['user_id'])){
 	?>
