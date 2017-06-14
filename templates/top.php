@@ -19,6 +19,7 @@
 		<meta name="keywords" content="<?=(isset($keywords))?$keywords:"Нужна ли кошка в квартире?";?>">
 		<link type="text/css" rel="stylesheet" href="media/bootstrap/css/bootstrap.min.css"/>
 		<link type="text/css" rel="stylesheet" href="media/css/style.css"/>
+		<script src="/media/js/jquery-3.2.1.min.js"></script>
 		<?php
 			if($_SESSION['user_id']){
 			?>
@@ -27,6 +28,7 @@
 			}
 		?>
 		<script src="/media/ckeditor/ckeditor.js"></script>
+		
 	</head>
 	
 	<body >

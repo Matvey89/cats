@@ -41,6 +41,7 @@ $about = $_POST['about'];
     </div>
   <button type="registr" class="btn btn-default">Добавить</button>
   </form>
+  <br/>
   <table class="table">
 	<tr>
 		<th width="200px">Изображение</th>
@@ -60,7 +61,7 @@ $about = $_POST['about'];
 			<?php             
 			if($result['image']==''){
 				?>
-				 <img width='200px' src='/media/uplouds/no_photo.jpg'/>;
+				 <img width='100px' src='/media/uplouds/no_photo.jpg'/>;
 				 <?php
 			}else{
 			?>

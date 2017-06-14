@@ -40,7 +40,7 @@
 		)";
 		$in=mysqli_query($db_con,$query);
 		if (!$in){
-		exit ($query);//для проверки кода
+			exit ($query);//для проверки кода
 		}else{
 		?>
 		<script>
