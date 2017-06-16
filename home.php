@@ -1,4 +1,6 @@
-<?php require_once('templates/top.php');
+<?php
+ $scripts=['media/js/gallery.js'] 
+require_once('templates/top.php');
 	if(isset($_SESSION['user_id'])){
 	if($_POST){
  

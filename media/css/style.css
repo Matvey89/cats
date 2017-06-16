@@ -67,6 +67,27 @@ p {
 article{
 	 height:100%;
 }
+.modal-window{
+	position:fixed;
+	top: 50px;
+	left: 50%;
+	margin-left:-250px;
+	width:500px;
+	padding:10px;
+	background: white;
+	border-radius: 5px;
+	border:solid 1px gold;
+	box-shadow: 1px 1px 1px black;
+}
+.overlay{
+position: fixed;
+height:100%;
+width:100%;
+background: black;
+opacity: 0.7;
+top:0;
+left:0;
+}
 
 @media screen and (max-width:600px){
 	.menu{

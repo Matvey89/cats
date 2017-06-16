@@ -22,6 +22,15 @@
 		<script src="/media/js/jquery-3.2.1.min.js"></script>
 		<script src="/media/js/main.js"></script>
 		<?php
+			if(count($scripts)>0){
+				foreach($scripts as $one){
+		?>
+			<script src='<?=$one;?>'></script>	
+		<?php	
+			}
+		}	
+		?>
+		<?php
 			if($_SESSION['user_id']){
 			?>
 		<script src="/media/js/home.js"</script>
