@@ -78,6 +78,24 @@ article{
 	border-radius: 5px;
 	border:solid 1px gold;
 	box-shadow: 1px 1px 1px black;
+	text-align: center;
+}
+.model-close-btn{
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	margin: 0;
+	padding: 0;
+	color: red;
+	text-decoration: none;
+	font-size: 14px;
+}
+.model-close-btn:before{
+	position: relative;
+	top: -1px;
+	content:"Закрыть";
+	color: black;
+	font-size: 11px;
 }
 .overlay{
 position: fixed;
