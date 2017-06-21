@@ -10,7 +10,7 @@ $keywords="Нужна ли кошка в квартире?";
   $url='index';
   }
   $query="SELECT*FROM maintexts WHERE url='$url'";
-  //echo $query;
+  echo $query;
   $adr=mysqli_query($db_con,$query);
   if(!$adr){
 	exit('error query');
